@@ -34,10 +34,45 @@
         "type": "github"
       }
     },
+    "ratpac-sandk-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1762869800,
+        "narHash": "sha256-eDYdxYMBVHmlD5zbfeP363ieGUSaJkFgrwEO1JoHBps=",
+        "owner": "sandK-31",
+        "repo": "ratpac-two",
+        "rev": "3568f838067657b4c387d98df92bfc18c093e54d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sandK-31",
+        "repo": "ratpac-two",
+        "type": "github"
+      }
+    },
+    "ratpac-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1759445440,
+        "narHash": "sha256-6N6HvZo8flIPsUGMxjUuyqZEwEaMI02UVkZdnSDOVKU=",
+        "owner": "rat-pac",
+        "repo": "ratpac-two",
+        "rev": "9661230e44fdc961835a3adabd797a8e792fa626",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rat-pac",
+        "ref": "3.3.0",
+        "repo": "ratpac-two",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "ratpac-sandk-src": "ratpac-sandk-src",
+        "ratpac-src": "ratpac-src"
       }
     },
     "systems": {

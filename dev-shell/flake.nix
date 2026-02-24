@@ -16,7 +16,10 @@
       system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-        ratpac = ratpac-env.packages.${system}.default;
+        # Choose which ratpac-two to use:
+        #   .ratpac-two       — upstream (rat-pac/ratpac-two)
+        #   .ratpac-two-sandk — fork (sandK-31/ratpac-two)
+        ratpac = ratpac-env.packages.${system}.ratpac-two;
         isDarwin = pkgs.stdenv.isDarwin;
       in
       {
@@ -33,6 +36,7 @@
           ];
           shellHook = ''
             export SHELL="${pkgs.bash}/bin/bash"
+            export QT_PLUGIN_PATH="${pkgs.qt5.qtbase.bin}/${pkgs.qt5.qtbase.qtPluginPrefix}"
             ${
               if !isDarwin then
                 ''
@@ -47,7 +51,9 @@
                   export DISPLAY=:0
                 ''
               else
-                ""
+                ''
+                  export QT_QPA_PLATFORM=cocoa
+                ''
             }
             echo "ratpac-two: ${ratpac}"
             echo "ROOT version: $(root-config --version)"
